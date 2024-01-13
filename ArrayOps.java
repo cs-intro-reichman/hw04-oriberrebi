@@ -1,6 +1,6 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int [] arrayX = {1, 2, 3, 7, 8, 3, 2};
+        int [] arrayX = {2,8,3,7,8};
         int [] arrayZ = {8, 2, 7, 7, 3};
 
         ///
@@ -48,7 +48,7 @@ public class ArrayOps {
                 max1 = maxN;
                 maxN = array[i];
             }
-            else if (array[i] > max1 && array[i] != maxN) {
+            else if (array[i] > max1) {
                     max1 = array[i];
                 }
                 }
