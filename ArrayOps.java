@@ -1,7 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int [] arrayX = {1, 2, 3};
-        int [] arrayZ = {0, 1, 2, 3};
+        int [] arrayX = {2, 2, 3, 7, 8, 3, 2};
+        int [] arrayZ = {8, 2, 7, 7, 3};
 
         ///
 
@@ -61,16 +61,20 @@ public class ArrayOps {
         boolean elementS = false;
         for (int i = 0; i < array1.length; i++){
             elementS = false;
+
             for (int j = 0; j < array2.length; j++) {
                 if (array1[i] == array2[j]) {
                     elementS = true;
+                    break;
                 }
-                return elementS;
             }
-            if (elementS == false){
+
+            if (!elementS) {
+                return false;
         }
         }
-        return elementS;
+
+        return true;
     }
 
     public static boolean isSorted(int [] array) {
