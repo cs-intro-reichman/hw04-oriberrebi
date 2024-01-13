@@ -52,9 +52,12 @@ public class ArrayOps {
                     max1 = array[i];
                 }
                 }
-        return max1;
-
-    }
+        if (max1 == Integer.MIN_VALUE) {
+            return maxN;
+        } else {
+            return max1;
+        }
+        }
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
         boolean elementS = false;
