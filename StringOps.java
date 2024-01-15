@@ -22,12 +22,55 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        
+    
+    String str = args[0];
+    System.out.println(capVowelsLowRest(str));
+
     }
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+        String ans = "";
+        String fAns = "";
+
+        for (int i = 0; i < string.length(); i++) {
+            char ch = string.charAt(i);
+            if (ch >= 65 && ch <= 90) {
+                ans = ans + (char) (ch + 32);
+            }
+            else {
+                ans = ans + ch;
+            }   
+        }
+
+        for (int j = 0; j < ans.length(); j++) {
+            fAns = fAns + capsVowel(ans.charAt(j));
+        }
+
+
+        return fAns;
+    }
+
+
+    public static String capsVowel (char letter) {
+        switch (letter) {
+            case 'a':
+            return "A";
+            
+            case 'e':
+            return "E";
+
+            case 'i':
+            return "I";
+
+            case 'o':
+            return "O";
+
+            case 'u':
+            return "U";
+
+            default:
+            return String.valueOf(letter);
+        }
     }
 
     public static String camelCase (String string) {
