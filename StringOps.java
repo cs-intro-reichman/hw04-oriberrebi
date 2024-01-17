@@ -103,15 +103,14 @@ public class StringOps {
             }
         }
 
-        StringBuilder FFans = new StringBuilder();
-        for (int i = 0; i < fAns.length(); i++) {
-            if (fAns.charAt(i) != ' ') {
-                FFans.append(fAns.charAt(i));
-            }
+    String FFans = "";
+    for (int i = 0; i < fAns.length(); i++) {
+        if (fAns.charAt(i) != ' ') {
+            FFans += fAns.charAt(i);
         }
-    
-        return FFans.toString();
     }
+
+    return FFans;
 }
 
 
