@@ -114,8 +114,8 @@ public class StringOps {
     }
     
 
-    public static int[] allIndexOf (String string, char chr) {
+    // public static int[] allIndexOf (String string, char chr) {
 
-        return new int[1];
-    }
+    //     return new int[1];
+    // }
 }
