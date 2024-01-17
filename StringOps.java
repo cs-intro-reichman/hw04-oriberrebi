@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class StringOps {
     ////////////////////////////////////////////////////////////
     //////                                               ///////
@@ -24,10 +26,12 @@ public class StringOps {
     public static void main(String[] args) {
 
     String str = args[0];
+    char chr = args[1].charAt(0);
+
     //System.out.println(capVowelsLowRest(str));
 
-    //System.out.println(camelCase(str));
-    System.out.println(allIndexOf(str));
+    // System.out.println(camelCase(str));
+    // System.out.println(Arrays.toString(allIndexOf(str, chr)));
 
     }
 
@@ -81,16 +85,16 @@ public class StringOps {
         String fAns = "";
         String FFans = "";
 
-        boolean sspace = true;
+        String result = "";
+        boolean foundFirstLetter = false;
 
         for (int i = 0; i < string.length(); i++) {
-            if (string.charAt(i) != ' ' && sspace) {
-                ans = ans + string.charAt(i);
-                sspace = false;
-            } else if (string.charAt(i) == ' ' && i < string.length() - 1 && string.charAt(i + 1) != ' ') {
-                sspace = false;
+            if (string.charAt(i) != ' ' || foundFirstLetter) {
+                result += string.charAt(i);
+                foundFirstLetter = true;
             }
         }
+        string = result;
 
         // lower case to all 
 
@@ -127,24 +131,24 @@ public class StringOps {
     }
     
 
-    public static int[] allIndexOf (String string, char chr) {
+    public static int[] allIndexOf(String string, char chr) {
         // string length
-        int Slength = string.length();
-        int array[] = new int[Slength]; 
-        int Mcount = 0;
+        int chrCount = 0;
 
     // number of appear
-     for (int i = 0; i < string.length(); i++){
-        if (string.charAt(i) == chr){
-            array[Mcount] = i; 
-            Mcount ++;
+        for (int i = 0; i < string.length(); i++){
+            if (string.charAt(i) == chr){
+                chrCount++;
+            }
         }
-     }
-    
-     int array1[] = new int[Mcount];
-     for (int i = 0; i < Mcount; i++) {
-        array1[i] = array[i];
+        int array1[] = new int[chrCount];
+        int array_count = 0;
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == chr){
+                array1[array_count] = i;
+                array_count++;
+            }
+        }
+        return array1;
     }
-        return  array1;
-}
 }
