@@ -26,7 +26,7 @@ public class StringOps {
     String str = args[0];
     System.out.println(capVowelsLowRest(str));
 
-    System.out.print(camelCase(str));
+    System.out.println(camelCase(str));
 
     }
 
@@ -75,13 +75,13 @@ public class StringOps {
         }
     }
 
-
     public static String camelCase (String string) {
+
+        // lower case to all
+        
         String ans = "";
         String fAns = "";
-        String FFans = "";
-
-        // lower case to all 
+        String FFans = ""; 
 
         for (int i = 0; i < string.length(); i++) {
             char ch = string.charAt(i);
@@ -94,13 +94,13 @@ public class StringOps {
         }
 
         // upper case if space before word
-        for (int i = 0; i < ans.length() - 1; i++) {
-            if (ans.charAt(i) == 32 && ans.charAt(i + 1) != 32) {
-                fAns = fAns + (char) (ans.charAt(i + 1) - 32);
+        for (int i = 0; i < string.length() - 1; i++) {
+            if (string.charAt(i) == 32 && string.charAt(i + 1) != 32) {
+                fAns = fAns + (char) (string.charAt(i + 1) + 32);
                 i++;
             }
             else { 
-                fAns = fAns + ans.charAt(i);
+                fAns = fAns + string.charAt(i);
             }
         }
 
@@ -115,8 +115,8 @@ public class StringOps {
     }
     
 
-    // public static int[] allIndexOf (String string, char chr) {
-
-    //     return new int[1];
-    // }
+    public static int[] allIndexOf (String string, char chr) {
+        // Write your code here:
+        return new int[1];
+    }
 }
