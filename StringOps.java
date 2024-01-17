@@ -78,7 +78,7 @@ public class StringOps {
     public static String camelCase (String string) {
         String ans = "";
         String fAns = "";
-        //String FFans = "";
+        String FFans = "";
 
         // lower case to all 
 
@@ -103,32 +103,19 @@ public class StringOps {
             }
         }
 
-    String FFans = "";
-    for (int i = 0; i < fAns.length(); i++) {
-        if (fAns.charAt(i) != ' ') {
-            FFans += fAns.charAt(i);
-        }
-    }
-
-    return FFans;
-}
-
-
         // remove spaces
-    //     for (int i = 0; i < fAns.length(); i++) {
-    //         if (fAns.charAt(i) != 32) {
-    //             FFans += fAns.charAt(i);
-    //         }
+        for (int i = 0; i < fAns.length(); i++) {
+            if (fAns.charAt(i) != 32) {
+                FFans += fAns.charAt(i);
+            }
 
-    //     }
-    //     return FFans;
-    // }
+        }
+        return FFans;
+    }
     
 
-//     public static int[] allIndexOf (String string, char chr) {
-//         for (int i = 0; i < string.length(); i++) {
-//             if 
+    public static int[] allIndexOf (String string, char chr) {
 
-//         return new int[1];
-//     }
-// }
+        return new int[1];
+    }
+}
