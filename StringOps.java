@@ -24,7 +24,9 @@ public class StringOps {
     public static void main(String[] args) {
     
     String str = args[0];
-    System.out.println(capVowelsLowRest(str));
+    // System.out.println(capVowelsLowRest(str));
+
+    System.out.print(camelCase(str));
 
     }
 
@@ -74,9 +76,43 @@ public class StringOps {
     }
 
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+        String ans = "";
+        String fAns = "";
+        String FFans = "";
+
+        // lower case to all 
+
+        for (int i = 0; i < string.length(); i++) {
+            char ch = string.charAt(i);
+            if (ch >= 65 && ch <= 90) {
+                ans = ans + (char) (ch + 32);
+            }
+            else {
+                ans = ans + ch;
+            }   
+        }
+
+        // upper case if space before word
+        for (int i = 0; i < ans.length() - 1; i++) {
+            if (ans.charAt(i) == 32 && ans.charAt(i + 1) != 32) {
+                fAns = fAns + (char) (ans.charAt(i + 1) - 32);
+                i++;
+            }
+            else { 
+                fAns = fAns + ans.charAt(i);
+            }
+        }
+
+        // remove spaces
+        for (int i = 0; i < fAns.length(); i++) {
+            if (fAns.charAt(i) != 32) {
+                FFans += fAns.charAt(i);
+            }
+
+        }
+        return FFans;
     }
+    
 
     public static int[] allIndexOf (String string, char chr) {
         // Write your code here:
