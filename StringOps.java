@@ -33,7 +33,6 @@ public class StringOps {
     public static String capVowelsLowRest (String string) {
         String ans = "";
         String fAns = "";
-
         for (int i = 0; i < string.length(); i++) {
             char ch = string.charAt(i);
             if (ch >= 65 && ch <= 90) {
@@ -43,16 +42,11 @@ public class StringOps {
                 ans = ans + ch;
             }   
         }
-
         for (int j = 0; j < ans.length(); j++) {
             fAns = fAns + capsVowel(ans.charAt(j));
         }
-
-
         return fAns;
     }
-
-
     public static String capsVowel (char letter) {
         switch (letter) {
             case 'a':
@@ -60,16 +54,12 @@ public class StringOps {
             
             case 'e':
             return "E";
-
             case 'i':
             return "I";
-
             case 'o':
             return "O";
-
             case 'u':
             return "U";
-
             default:
             return String.valueOf(letter);
         }
