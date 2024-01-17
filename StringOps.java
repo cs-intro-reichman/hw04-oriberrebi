@@ -50,6 +50,7 @@ public class StringOps {
 
 
         return fAns;
+    }
 
 
     public static String capsVowel (char letter) {
@@ -73,7 +74,7 @@ public class StringOps {
             return String.valueOf(letter);
         }
     }
-}
+
 
     public static String camelCase (String string) {
         String ans = "";
