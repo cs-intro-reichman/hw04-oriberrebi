@@ -130,30 +130,20 @@ public class StringOps {
     public static int[] allIndexOf (String string, char chr) {
         // string length
         int Slength = string.length();
-     
-     int array[] = new int[Slength]; 
-     int Mcount = 0;
+        int array[] = new int[Slength]; 
+        int Mcount = 0;
 
     // number of appear
-     for(int i = 0; i < string.length(); i++){
-        if(string.charAt(i) == chr){
-            array[i] = 1; 
+     for (int i = 0; i < string.length(); i++){
+        if (string.charAt(i) == chr){
+            array[Mcount] = i; 
             Mcount ++;
         }
      }
     
      int array1[] = new int[Mcount];
-     int j = 0;
-
-     for (int i = 0; i < array1.length; i ++){
-       while( j < array.length ){
-        if(array[j] == 1){
-            array1[i] = j;
-            break;
-            }
-            j ++;
-        }
-        j++;
+     for (int i = 0; i < Mcount; i++) {
+        array1[i] = array[i];
     }
         return  array1;
 }
